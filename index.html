@@ -5,7 +5,7 @@
 <title>A Democracy of Two Congresses</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: oklch(98% 0.006 90);
@@ -68,10 +68,11 @@
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
   .eyebrow {
-    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
     color: var(--accent-eyebrow); font-weight: 700; margin-bottom: 16px;
   }
   .btn {
+    display: inline-block;
     background: var(--accent); color: oklch(98% 0.006 90); border: none;
     padding: 15px 32px; font-family: var(--sans); font-size: 0.75rem; font-weight: 700;
     letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;
@@ -84,7 +85,7 @@
   }
   .btn-outline:hover { border-color: var(--accent-dim); color: var(--accent-bright); text-decoration: none; }
   .tag {
-    font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-tag);
+    font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-tag);
     border: 1px solid var(--border-tag); padding: 4px 9px;
   }
   .section-inner { max-width: 900px; margin: 0 auto; }
@@ -228,9 +229,9 @@
   }
   .part-card { background: var(--bg); padding: 44px 40px; }
   .part-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; flex-wrap: wrap; }
-  .part-num { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+  .part-num { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
   .part-divider { width: 1px; height: 10px; background: var(--border-lighter); }
-  .part-name { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--text-quiet); }
+  .part-name { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--text-quiet); }
   .part-question {
     font-family: var(--serif); font-size: 1.05rem; font-style: italic; color: var(--text-body);
     margin-bottom: 18px; line-height: 1.55;
@@ -253,7 +254,7 @@
     border-top: 3px solid var(--accent); padding: clamp(36px, 6vw, 56px) clamp(20px, 5vw, 48px);
   }
   .part-five-inner { max-width: 900px; margin: 0 auto; }
-  .part-five .conclusion-label { margin-left: auto; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faintest); }
+  .part-five .conclusion-label { margin-left: auto; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faintest); }
   .part-five-body {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(min(400px,100%), 1fr));
     gap: 40px; border-top: 1px solid var(--border-light); padding-top: 36px;
@@ -277,7 +278,7 @@
     line-height: 1; color: oklch(18% 0.02 250); margin-bottom: 16px;
     overflow-wrap: anywhere;
   }
-  .stat-label { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 10px; }
+  .stat-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 10px; }
   .stat-desc { font-size: 0.8rem; color: var(--text-dimmer); line-height: 1.65; text-wrap: pretty; }
 
   /* ABOUT */
@@ -311,7 +312,7 @@
   }
   .press-cell { background: var(--bg-alt-2); padding: 28px 24px; }
   .press-cell.link { text-decoration: none; display: block; }
-  .press-cell .kicker { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
+  .press-cell .kicker { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
   .press-cell.link .kicker { color: var(--accent); }
   .press-cell:not(.link) .kicker { color: var(--accent-eyebrow); }
   .press-cell p.body { font-size: 0.82rem; color: var(--text-dimmer); line-height: 1.75; }
@@ -361,26 +362,6 @@
   .footer-links a { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
   .footer-row a.press-mail { font-size: 0.72rem; color: var(--text-faint); }
 
-  /* MODAL */
-  .modal-backdrop {
-    display: none; position: fixed; inset: 0; z-index: 500; background: rgba(0,0,0,0.85);
-    align-items: center; justify-content: center; animation: fadeIn 0.2s ease both;
-  }
-  .modal-backdrop.open { display: flex; }
-  .modal-box {
-    background: var(--bg-alt); border: 1px solid var(--border-light); padding: clamp(36px, 5vw, 56px);
-    max-width: 480px; width: 90%; position: relative; animation: fadeInUp 0.25s ease both;
-  }
-  .modal-close {
-    position: absolute; top: 16px; right: 16px; background: none; border: none;
-    color: var(--text-dimmer); font-size: 1.2rem; cursor: pointer; padding: 4px 8px; line-height: 1;
-  }
-  .modal-box h3 { font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 400; color: oklch(20% 0.02 250); margin-bottom: 12px; }
-  .modal-box > p { font-size: 0.85rem; color: var(--text-dimmer); line-height: 1.75; margin-bottom: 32px; }
-  .modal-box .email-form { max-width: none; margin-bottom: 14px; }
-  .modal-box .email-form input { min-width: 180px; padding: 14px 16px; font-size: 0.88rem; }
-  .modal-box .email-form button { padding: 14px 22px; font-size: 0.72rem; }
-  .modal-box .success-box { padding: 28px; }
 </style>
 </head>
 <body>
@@ -395,9 +376,10 @@
       <a href="#five-parts">Five Parts</a>
       <a href="#about">About</a>
       <a href="#downloads">Downloads</a>
+      <a href="#get-the-book">Get the Book</a>
     </div>
     <div class="nav-actions">
-      <button class="btn nav-cta" data-open-modal="">Get Notified</button>
+      <a class="btn nav-cta" href="#get-the-book">Buy the Book</a>
       <button class="hamburger" data-toggle-nav="" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -408,6 +390,7 @@
       <a href="#five-parts">Five Parts</a>
       <a href="#about">About</a>
       <a href="#downloads">Downloads</a>
+      <a href="#get-the-book">Get the Book</a>
     </div>
   </div>
 </nav>
@@ -423,7 +406,7 @@
     <p class="hero-subtitle">Power, Opposition, and the Congressization of the BJP · Anant Deodar</p>
     <p class="hero-summary">This book is not about whether the BJP is better or worse than the Congress. It is about what prolonged power does to every successful political party — and why democracies must demand accountability between elections, not just at them.</p>
     <div class="hero-ctas">
-      <button class="btn" data-open-modal="">Get Notified at Launch</button>
+      <a class="btn" href="#get-the-book">Buy the Book</a>
       <a href="#downloads" class="btn-outline">Read the Prologue</a>
     </div>
   </div>
@@ -651,7 +634,7 @@
     <h2>Coverage</h2>
     <div class="media-box">
       <p>Podcast conversations, opinion pieces, and interviews will be listed here as they go live. For review copies or interview requests, reach out below.</p>
-      <a href="#notify">Press Inquiries →</a>
+      <a href="#get-the-book">Press Inquiries →</a>
     </div>
   </div>
 </section>
@@ -694,19 +677,24 @@
   </div>
 </section>
 
-<!-- NOTIFY -->
-<section id="notify" class="notify">
+<!-- GET THE BOOK -->
+<section id="get-the-book" class="notify">
   <div class="notify-inner">
-    <p class="eyebrow">Stay Informed</p>
-    <h2>Get Notified at Launch</h2>
-    <p class="notify-copy">No purchase link exists yet. Leave your email and we'll reach you when the book is available — and when new writing on these ideas goes live.</p>
+    <p class="eyebrow">Available Now</p>
+    <h2>Get the Book</h2>
+    <p class="notify-copy">The Kindle edition of <em>A Democracy of Two Congresses</em> is live now on Amazon.</p>
+    <div class="hero-ctas" style="margin-bottom:44px;">
+      <a class="btn" href="https://www.amazon.com/dp/B0GX2WT5K3" target="_blank" rel="noopener">Buy on Amazon.com</a>
+      <a class="btn" href="https://www.amazon.in/dp/B0GX2WT5K3" target="_blank" rel="noopener">Buy on Amazon.in</a>
+    </div>
+    <p class="notify-copy" style="font-size:0.85rem;">Want updates on new writing and future editions? Leave your email below.</p>
     <form class="email-form" data-notify-form="">
       <input type="email" placeholder="Your email address" required="">
-      <button type="submit" class="btn">Notify Me</button>
+      <button type="submit" class="btn-outline" style="cursor:pointer;">Notify Me</button>
     </form>
     <div class="success-box" data-notify-success="">
       <p>You're on the list.</p>
-      <p>We'll be in touch when the book is ready.</p>
+      <p>We'll be in touch with new writing and future editions.</p>
     </div>
     <p class="fine-print">No spam. No third-party sharing. Unsubscribe any time.</p>
     <p class="fine-print press">Press inquiries: <a href="mailto:share@anantdeodar.ink">share@anantdeodar.ink</a></p>
@@ -732,29 +720,11 @@
       <a href="#five-parts">Five Parts</a>
       <a href="#about">About</a>
       <a href="#downloads">Downloads</a>
+      <a href="#get-the-book">Get the Book</a>
     </div>
     <a class="press-mail" href="mailto:share@anantdeodar.ink">share@anantdeodar.ink</a>
   </div>
 </footer>
-
-<!-- MODAL -->
-<div class="modal-backdrop" data-modal-backdrop="">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <button class="modal-close" data-close-modal="" aria-label="Close">✕</button>
-    <p class="eyebrow">Stay Informed</p>
-    <h3 id="modal-title">Get Notified at Launch</h3>
-    <p>No purchase link exists yet. We'll reach you when the book is available and when new writing goes live.</p>
-    <form class="email-form" data-modal-form="">
-      <input type="email" placeholder="Your email address" required="">
-      <button type="submit" class="btn">Notify Me</button>
-    </form>
-    <p class="fine-print" data-modal-fineprint="">No spam. No third-party sharing. Unsubscribe any time.</p>
-    <div class="success-box" data-modal-success="">
-      <p>You're on the list.</p>
-      <p>We'll be in touch when the book is ready.</p>
-    </div>
-  </div>
-</div>
 
 <script>
   (function () {
@@ -771,38 +741,16 @@
       });
     });
 
-    var backdrop = document.querySelector('[data-modal-backdrop]');
-    var modalBox = backdrop.querySelector('.modal-box');
-    function openModal() { backdrop.classList.add('open'); }
-    function closeModal() { backdrop.classList.remove('open'); }
-    document.querySelectorAll('[data-open-modal]').forEach(function (btn) {
-      btn.addEventListener('click', openModal);
-    });
-    document.querySelectorAll('[data-close-modal]').forEach(function (btn) {
-      btn.addEventListener('click', closeModal);
-    });
-    backdrop.addEventListener('click', closeModal);
-    modalBox.addEventListener('click', function (e) { e.stopPropagation(); });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeModal();
-    });
-
-    function wireForm(form, success, extraHide) {
+    function wireForm(form, success) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         form.classList.add('hidden');
-        if (extraHide) extraHide.classList.add('hidden');
         success.classList.add('visible');
       });
     }
     wireForm(
       document.querySelector('[data-notify-form]'),
       document.querySelector('[data-notify-success]')
-    );
-    wireForm(
-      document.querySelector('[data-modal-form]'),
-      document.querySelector('[data-modal-success]'),
-      document.querySelector('[data-modal-fineprint]')
     );
   })();
 </script>
